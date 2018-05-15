@@ -3,7 +3,7 @@ import time
 
 from EventManager import EventManager 
 from SensorManager import SensorManager 
-from SensorManager import TempSensor 
+from Sensors.Tempature import TempSensor 
 
 s = SensorManager()
 t = TempSensor()
