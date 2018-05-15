@@ -13,3 +13,6 @@ class WaterTempatureSensor(Sensor):
 
     def read_sensor(self):
         return 'Temp', 4
+    
+    def __del__(self):
+        print('cleaning WaterTempatureSensor')
