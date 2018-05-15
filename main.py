@@ -24,4 +24,4 @@ if __name__== "__main__":
     setup()
     main()
 
-print("complete")
+exit(0)
