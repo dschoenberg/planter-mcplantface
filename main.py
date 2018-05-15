@@ -1,16 +1,17 @@
 #!/usr/bin/python
 import time
 
-from EventManager import EventManager 
-from SensorManager import SensorManager 
-from Sensors.Tempature import TempSensor 
+from Events.EventManager import EventManager 
+from Sensors.SensorManager import SensorManager 
+from Sensors.Tempature import AirTempatureSensor 
+from Sensors.Tempature import WaterTempatureSensor 
 
 s = SensorManager()
-t = TempSensor()
 e = EventManager()
 
 def setup():
-    s.register_sensor(t)
+    s.register_sensor(WaterTempatureSensor())
+    s.register_sensor(AirTempatureSensor())
 def main():
     try:
         while True:

@@ -1,16 +1,15 @@
-from abc import ABC, abstractmethod
-class Sensor(ABC):
-    @abstractmethod
-    def read_sensor(self):
-        pass
-    
-    def P(self):
-        print('p')
+from Sensors.BaseSensor import Sensor
 
-class TempSensor(Sensor):
+class AirTempatureSensor(Sensor):
     def __init__(self):
-        print('new TempSensor')
+        print('new AirTempatureSensor')
 
     def read_sensor(self):
-        self.P()
         return 'Temp', 3
+
+class WaterTempatureSensor(Sensor):
+    def __init__(self):
+        print('new WaterTempatureSensor')
+
+    def read_sensor(self):
+        return 'Temp', 4
