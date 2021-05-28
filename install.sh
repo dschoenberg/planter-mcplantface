@@ -34,7 +34,7 @@ while true; do
     esac
 done
 
-echo -e "\n***** Installing/updating required packages... *****\n"
+echo -e "\n*** Installing/updating required packages... ***\n"
 #Install pip (package installer):
 apt-get -y install python-setuptools
 easy_install pip
@@ -42,6 +42,8 @@ apt-get -y install python-dev
 apt-get -y install libpcre3-dev
 pip install -r requirements.txt
 
+echo  "\n*** Initializing config file ***\n"
+python main.py --default-configs
 
 while true; do
     read -p "Run automatically? (y/n): " yn

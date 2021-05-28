@@ -47,7 +47,7 @@ def main():
             print(logging_url, r.status_code, r.json())
 
             #todo
-            sys.exit(1)
+            #sys.exit(1)
 
             time.sleep(int(config['DEFAULT']['PollInterval']))
     except KeyboardInterrupt:
