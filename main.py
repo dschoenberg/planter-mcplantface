@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import time
 import configparser
+import sys
 import requests
 
 from Events.EventManager import EventManager
@@ -12,8 +13,9 @@ s = SensorManager()
 e = EventManager()
 config = configparser.ConfigParser()
 
-def read_configs():
-    config.read('configuration.ini')
+def default_configs():
+    print('creating/resetting configuration')
+
     config['DEFAULT'] = {
         'PollInterval': '30',
         'DeviceId': "1"
@@ -25,27 +27,36 @@ def read_configs():
         config.write(configfile)
 
 def setup():
-    read_configs()
+    config_read = config.read('configuration.ini')
+    if len(config_read) == 0:  
+        print('Config not found, please run python main.py --default-configs')
+        sys.exit(1)
+
     s.register_sensor(WaterTempatureSensor())
     s.register_sensor(AirTempatureSensor())
-
 
 def main():
     try:
         while True:
-            s.read_all()
-            e.send_event(None)
-            water_url = config['Server']['Url'] + 'water-temp'
-            #formdata waterTemp
-            r = requests.post(water_url, {"waterTemp": "88"})
-            print(water_url, r.status_code, r.json())
+            sensor_data = s.read_all()
+            print(sensor_data)
+
+            logging_url = config['Server']['Url'] + 'log'
+
+            r = requests.post(logging_url, json=sensor_data)
+            print(logging_url, r.status_code, r.json())
+
+            #todo
+            sys.exit(1)
 
             time.sleep(int(config['DEFAULT']['PollInterval']))
     except KeyboardInterrupt:
         pass
 
-
 if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        if sys.argv[1] == '--default-configs':
+            default_configs()
     setup()
     main()
 

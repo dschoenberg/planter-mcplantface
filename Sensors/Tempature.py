@@ -2,7 +2,8 @@ from Sensors.BaseSensor import Sensor
 
 class AirTempatureSensor(Sensor):
     def __init__(self):
-        print('new AirTempatureSensor')
+        #print('new AirTempatureSensor')
+        return
 
     def read_sensor(self):
         return 3
@@ -17,7 +18,8 @@ class AirTempatureSensor(Sensor):
 
 class WaterTempatureSensor(Sensor):
     def __init__(self):
-        print('new WaterTempatureSensor')
+        #print('new WaterTempatureSensor')
+        return
 
     def read_sensor(self):
         return '4'
@@ -29,6 +31,3 @@ class WaterTempatureSensor(Sensor):
     @staticmethod
     def sensor_id():
         return 2
-        
-    def __del__(self):
-        print('cleaning WaterTempatureSensor')
