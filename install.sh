@@ -40,7 +40,9 @@ apt-get -y install python-setuptools
 easy_install pip
 apt-get -y install python-dev
 apt-get -y install libpcre3-dev
-pip install -r requirements.txt
+apt install python3
+apt-get install python3-pip
+pip3 install -r requirements.txt
 
 echo  "\n*** Initializing config file ***\n"
 python main.py --default-configs

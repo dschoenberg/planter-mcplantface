@@ -1,4 +1,5 @@
 from Sensors.BaseSensor import Sensor
+from Sensors.MPL3115A2 import MPLSensor
 
 class AirTempatureSensor(Sensor):
     def __init__(self):
@@ -6,7 +7,9 @@ class AirTempatureSensor(Sensor):
         return
 
     def read_sensor(self):
-        return 3
+        foo, bar, blah = MPLSensor.readSensor()
+        print(foo, bar, blah)
+        return blah
     
     @staticmethod
     def sensor_type():
