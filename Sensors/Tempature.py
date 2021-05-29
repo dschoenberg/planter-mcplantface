@@ -7,8 +7,7 @@ class AirTempatureSensor(Sensor):
         return
 
     def read_sensor(self):
-        foo, bar, blah = MPLSensor.readSensor()
-        print(foo, bar, blah)
+        foo, bar, blah = MPLSensor().readSensor()
         return blah
     
     @staticmethod

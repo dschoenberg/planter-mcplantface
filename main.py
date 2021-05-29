@@ -32,7 +32,7 @@ def setup():
         print('Config not found, please run python main.py --default-configs')
         sys.exit(1)
 
-    s.register_sensor(WaterTempatureSensor())
+    # s.register_sensor(WaterTempatureSensor())
     s.register_sensor(AirTempatureSensor())
 
 def main():

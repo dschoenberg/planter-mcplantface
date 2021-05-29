@@ -1,3 +1,4 @@
 RPi.GPIO==0.5.11
 configmanager
 requests
+smbus

@@ -37,7 +37,6 @@ class MPLSensor:
         temp = ((data[4] * 256) + (data[5] & 0xF0)) / 16
         altitude = tHeight / 16.0
         cTemp = temp / 16.0
-        fTemp = cTemp * 1.8 + 32
 
         # MPL3115A2 address, 0x60(96)
         # Select control register, 0x26(38)
