@@ -8,7 +8,7 @@ import smbus
 import time
 
 class MPLSensor:
-    def readSensor():
+    def readSensor(self):
         # Get I2C bus
         bus = smbus.SMBus(1)
 
