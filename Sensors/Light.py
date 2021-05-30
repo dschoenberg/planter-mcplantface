@@ -7,7 +7,7 @@ class LightSensor(Sensor):
         return
 
     def read_sensor(self):
-        red, green, blue, ir, luminance = MPL3115A2().readSensor()
+        luminance = MPL3115A2().readSensor()
         return luminance
     
     @staticmethod

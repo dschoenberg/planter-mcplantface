@@ -44,7 +44,7 @@ class TCS34725:
 
         # Calculate luminance
         luminance = (-0.32466 * red) + (1.57837 * green) + (-0.73191 * blue)
-        return red, green, blue, cData, luminance
+        return luminance
 
 # Output data to screen
 # print "Red Color luminance : %d lux" %red
