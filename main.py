@@ -8,6 +8,7 @@ from Events.EventManager import EventManager
 from Sensors.SensorManager import SensorManager
 from Sensors.Tempature import AirTempatureSensor
 from Sensors.Tempature import AirPressureSensor
+from Sensors.Light import LightSensor
 
 s = SensorManager()
 e = EventManager()
@@ -34,6 +35,7 @@ def setup():
 
     s.register_sensor(AirPressureSensor())
     s.register_sensor(AirTempatureSensor())
+    s.register_sensor(LightSensor())
 
 def main():
     try:
