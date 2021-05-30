@@ -7,7 +7,7 @@
 import smbus
 import time
 
-class MPLSensor:
+class MPL3115A2:
     def readSensor(self):
         # Get I2C bus
         bus = smbus.SMBus(1)

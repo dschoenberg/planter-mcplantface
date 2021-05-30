@@ -7,7 +7,7 @@ import requests
 from Events.EventManager import EventManager
 from Sensors.SensorManager import SensorManager
 from Sensors.Tempature import AirTempatureSensor
-from Sensors.Tempature import WaterTempatureSensor
+from Sensors.Tempature import AirPressureSensor
 
 s = SensorManager()
 e = EventManager()
@@ -32,7 +32,7 @@ def setup():
         print('Config not found, please run python main.py --default-configs')
         sys.exit(1)
 
-    # s.register_sensor(WaterTempatureSensor())
+    s.register_sensor(AirPressureSensor())
     s.register_sensor(AirTempatureSensor())
 
 def main():

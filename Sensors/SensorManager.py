@@ -8,9 +8,6 @@ class SensorManager:
         print('new Sensormanager')
 
     def __del__(self):
-        #print('unregistering sensors')
-        sleep(1)
-
         while len(self.sensors) > 0:
             foo = self.sensors.pop()
             #print('removing {0}'.format(foo))
